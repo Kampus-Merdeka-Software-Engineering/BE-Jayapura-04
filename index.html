@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+
+    <title>Velvet Gaze</title>
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+    <!--<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />-->
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <img
+        src="C:\Users\HP\Downloads\belajar software engineer revou\capstone\img\Logo.jpeg"
+        alt="Logo"
+      />
+
+      <div class="navbar-nav">
+        <a href="#beranda">Beranda</a>
+        <a href="#kategori">Kategori</a>
+        <a href="">Tentang Kami</a>
+        <a href="">Bantuan</a>
+      </div>
+      <div class="navbar-ekstra">
+        <a href="#" id="search"><i data-feather="search"></i></a>
+        <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+        <a href="#" id="user"><i data-feather="user"></i></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+      <div class="search-box">
+        <input type="search" name="" id="" placeholder="Cari" />
+      </div>
+    </nav>
+
+    <section class="hero" id="beranda">
+      <main class="content">
+        <h1>Selamat Datang!</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae,
+          animi.
+        </p>
+        <a href="#" class="cta">Belanja Sekarang</a>
+      </main>
+    </section>
+
+    <section class="kategori" id="kategori">
+      <div class="heading">
+        <h2>Kategori</h2>
+      </div>
+      <div class="swiper kategori-produk">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <img src="img/bg4.jpg" alt="" />
+            <div class="content">
+              <a href="#" class="btn">Wanita</a>
+            </div>
+          </div>
+          <div class="swiper-slide box">
+            <img src="img/bg3.jpg" alt="" />
+            <div class="content">
+              <a href="#" class="btn">Pria</a>
+            </div>
+          </div>
+          <div class="swiper-slide box">
+            <img src="img/bg2.jpg" alt="" />
+            <div class="content">
+              <a href="#" class="btn">Anak-Anak</a>
+            </div>
+          </div>
+          <div class="swiper-slide box">
+            <img src="img/bg1.jpg" alt="" />
+            <div class="content">
+              <a href="#" class="btn">Unisex</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo" id="promo">
+      <h2>Our Promo for you!</h2>
+      <div class="slider-wrapper">
+        <div class="slider">
+          <img id="slide1" src="img/promo 1.png" alt="promo 1" />
+          <img id="slide2" src="img/promo 2.png" alt="promo 2" />
+          <img id="slide3" src="img/promo 3.png" alt="promo 3" />
+          <img id="slide4" src="img/promo 4.png" alt="promo 4" />
+        </div>
+        <div class="slider-nav">
+          <a href="#slide1"></a>
+          <a href="#slide2"></a>
+          <a href="#slide3"></a>
+          <a href="#slide4"></a>
+        </div>
+      </div>
+    </section>
+
+    <!--bagian rekomendasi-->
+    <section class="rekomendasi" id="rekomendasi">
+      <h2>Rekomendasi</h2>
+      <div class="container">
+        <div class="card" style="color: #000000">
+          <div class="imgbox">
+            <img src="img/Japanese Hoodies.jpeg" />
+          </div>
+          <div class="content">
+            <h3>Japanese Sweatshirt</h3>
+            <p>Fit to XL</p>
+          </div>
+        </div>
+        <div class="card" style="color: #000000">
+          <div class="imgbox">
+            <img src="img/i yellow u.jpeg" />
+          </div>
+          <div class="content">
+            <h3>I Yellow U T-Shirt</h3>
+            <p>This t-shirt will brighten up your day!</p>
+          </div>
+        </div>
+        <div class="card" style="color: #000000">
+          <div class="imgbox">
+            <img src="img/white thank shirt.jpeg" />
+          </div>
+          <div class="content">
+            <h3>The Coolest Me</h3>
+            <p>Make your body comfortable with this t-shirt, boys!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>-->
+
+    <script>
+      feather.replace();
+    </script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
