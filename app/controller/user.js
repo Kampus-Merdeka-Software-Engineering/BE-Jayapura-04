@@ -1,7 +1,7 @@
 const User = require('../model/user');
 
 function signup(req, res, next) {
-    if (req.body.namaLengkap == "" || req.body.email == "" || req.body.password == "") {
+    if (req.body.NamaLengkap == "" || req.body.email == "" || req.body.password == "") {
         res.status(400).json({
             message: "EMPTY FIELD"
         });
@@ -9,7 +9,7 @@ function signup(req, res, next) {
     }
 
     db.create({
-        namaLengkap: req.body.namaLengkap,
+        NamaLengkap: req.body.NamaLengkap,
         email: req.body.email,
         password: req.body.password,
     })
