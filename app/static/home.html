@@ -145,7 +145,7 @@
             </form>
             <form action="#" class="signup" id="signupForm">
               <div class="field">
-                <input id="namalengkap" type="text" placeholder="Nama Lengkap" required>
+                <input id="namaLengkap" type="text" placeholder="Nama Lengkap" required>
               </div>
               <div class="field">
                 <input id="emailup" type="text" placeholder="Masukan Email" required>
@@ -381,7 +381,7 @@
 
 
     var signupBtn = document.getElementById("buttonSignup");
-    var namaLengkapInput = document.getElementById("namalengkap");
+    var namaLengkapInput = document.getElementById("namaLengkap");
     var emailupInput = document.getElementById("emailup");
     var passwordupInput = document.getElementById("passwordup");
 
@@ -394,7 +394,7 @@
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    namalengkap: namaLengkap.value,
+                    namaLengkap: namaLengkap.value,
                     email: email.value,
                     password: password.value,
                 })

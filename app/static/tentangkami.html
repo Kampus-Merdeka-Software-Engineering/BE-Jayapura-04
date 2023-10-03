@@ -127,10 +127,10 @@
           <form action="#" class="login">
             <pre></pre>
             <div class="field">
-              <input type="email" placeholder="Masukan Email " required />
+              <input id="email" type="email" placeholder="Masukan Email " required />
             </div>
             <div class="field">
-              <input type="password" placeholder="Masukan Password" required />
+              <input id="password" type="password" placeholder="Masukan Password" required />
             </div>
 
             <div class="field btn">
@@ -143,13 +143,13 @@
           </form>
           <form action="#" class="signup">
             <div class="field">
-              <input type="text" placeholder="Nama Lengkap" required />
+              <input id="namaLengkap" type="text" placeholder="Nama Lengkap" required />
             </div>
             <div class="field">
-              <input type="text" placeholder="Masukan Email" required />
+              <input id="emailup" type="text" placeholder="Masukan Email" required />
             </div>
             <div class="field">
-              <input type="password" placeholder="Masukan Password" required />
+              <input id="passwordup" type="password" placeholder="Masukan Password" required />
             </div>
             <div class="field">
               <input
@@ -328,7 +328,7 @@
   
   
     var signupBtn = document.getElementById("buttonSignup");
-    var namaLengkapInput = document.getElementById("namalengkap");
+    var namaLengkapInput = document.getElementById("namaLengkap");
     var emailupInput = document.getElementById("emailup");
     var passwordupInput = document.getElementById("passwordup");
 
@@ -341,7 +341,7 @@
                       "Content-Type": "application/json",
                   },
                   body: JSON.stringify({
-                      namalengkap: namaLengkap.value,
+                      namaLengkap: namaLengkap.value,
                       email: email.value,
                       password: password.value,
                   })
