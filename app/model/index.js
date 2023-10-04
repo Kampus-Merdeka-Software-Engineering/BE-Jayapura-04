@@ -1,11 +1,11 @@
-const sequelize = require('sequelize');
-const mysql = require('mysql2');
+const sequelize = require('sequelize')
+const mysql = require('mysql2')
 
-const connection = new sequelize.Sequelize('railway', 'root', 'joopjoergenihbos29', {
-    host: '127.0.0.1',
+const connection = new sequelize.Sequelize('railway', 'root', 'g3rvoxHERUtrJFQXIp24', {
+    host: 'containers-us-west-201.railway.app',
     dialect: 'mysql',
     logging: false,
-    port: 3306
-});
+    port: 5547
+})
 
-module.exports = connection;
+module.exports = connection
