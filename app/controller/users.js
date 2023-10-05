@@ -1,20 +1,22 @@
 const User = require('../model/users');
 
 // Controller untuk pendaftaran (Signup)
-async function postSignup(req, res) {
-  try {
-    const { NamaLengkap, email, password } = req.body;
-    
-    const user = await User.create({
-      namaLengkap: NamaLengkap,
-      email: email,
-      password: password
-    });
+function postSignup(req, res) {
+  const { namaLengkap, email, password } = req.body;
 
-    res.status(201).json({ message: 'Pendaftaran berhasil' });
-  } catch (error) {
-    res.status(500).json({ error: 'Pendaftaran gagal' });
-  }
+  const user = {
+    namaLengkap: namaLengkap,
+    email: email,
+    password: password,
+  };
+
+  User.create(user) // Menggunakan model User untuk membuat pengguna
+    .then(() => {
+      res.status(201).json({ message: 'Pendaftaran berhasil' });
+    })
+    .catch((error) => {
+      res.status(500).json({ error: 'Pendaftaran gagal' });
+    });
 }
 
 // Controller untuk mendapatkan data pendaftaran (Signup)

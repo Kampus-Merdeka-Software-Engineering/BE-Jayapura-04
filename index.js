@@ -1,15 +1,18 @@
-const express = require("express");
-const path = require('path');
+const express = require("express") // ini perlu
+const cors = require('cors');
+const path = require('path'); //tidak perlu npm install
 const connection = require('./app/model/index');
+
+// init express server and router
+const app = express();
 const mainRouter = require('./app/routes');
 
-const app = express();
-
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use("/", mainRouter);
 
-app.use('/static', express.static(path.join(__dirname, 'static')));
+// http router
+app.use("/", mainRouter);
 
 const port = 3000;
 app.listen(port, function () {
