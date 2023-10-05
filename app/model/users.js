@@ -1,16 +1,16 @@
-const sequelize = require('sequelize');
-const connection = require('./index');
+const { DataTypes } = require('sequelize');
+const sequelize = require('./index');
 
-const user = connection.define("users", {
-    id: { type: sequelize.DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    namaLengkap: { type: sequelize.DataTypes.TEXT },
-    email: { type: sequelize.DataTypes.TEXT },
-    password: { type: sequelize.DataTypes.TEXT },
+const User = sequelize.define("users", {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  namaLengkap: { type: DataTypes.TEXT },
+  email: { type: DataTypes.TEXT },
+  password: { type: DataTypes.TEXT },
 }, {
-    freezeTableName: true,
-    timestamps: false
+  tableName: 'users', // Nama tabel dalam database
+  timestamps: false
 });
 
-module.exports = user;
+module.exports = User;
 
 

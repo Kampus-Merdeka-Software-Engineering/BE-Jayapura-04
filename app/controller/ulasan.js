@@ -4,11 +4,13 @@ const Ulasan = require('../model/ulasan');
 function postUlasan(req, res) {
   const { username, rating, ulasan } = req.body;
 
-  Ulasan.create({
-    username,
-    rating,
-    ulasan,
-  })
+  const ulasanData = {
+    username: username,
+    rating: rating,
+    ulasan: ulasan,
+  };
+
+  Ulasan.create(ulasanData)
     .then(() => {
       res.status(201).json({ message: 'Ulasan berhasil disimpan' });
     })
