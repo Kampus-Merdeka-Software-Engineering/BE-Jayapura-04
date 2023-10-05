@@ -1,23 +1,20 @@
 const User = require('../model/users');
 
-// Controller untuk pendaftaran (Signup)
-function postSignup(req, res) {
+const postSignup = async (req, res) => {
   const { namaLengkap, email, password } = req.body;
 
-  const user = {
-    namaLengkap: namaLengkap,
-    email: email,
-    password: password,
-  };
+  // Validasi data (contoh: periksa apakah email sudah digunakan)
+  const existingUser = await User.findOne({ where: { email } });
+  if (existingUser) {
+    return res.status(400).json({ error: 'Email sudah digunakan' });
+  }
 
-  User.create(user) // Menggunakan model User untuk membuat pengguna
-    .then(() => {
-      res.status(201).json({ message: 'Pendaftaran berhasil' });
-    })
-    .catch((error) => {
-      res.status(500).json({ error: 'Pendaftaran gagal' });
-    });
-}
+  // Jika data valid, simpan pengguna ke database
+  const user = await User.create({ namaLengkap, email, password });
+
+  res.status(201).json({ message: 'Pendaftaran berhasil' });
+};
+
 
 // Controller untuk mendapatkan data pendaftaran (Signup)
 async function getSignup(req, res) {

@@ -1,6 +1,6 @@
 const kategoriPakaian = require('../model/pakaian')
 
-function getPakaian(req, res) {
+function getClothes(req, res) {
     kategoriPakaian.findAll()
     .then(function(data){
         res.status(200).json({
@@ -14,18 +14,18 @@ function getPakaian(req, res) {
     })
 }
 
-function getPakaianByJenis(req, res) {
-    const { jenis } = req.params; // Ambil jenis dari parameter URL
+function getClothesByType(req, res) {
+    const { type } = req.params; // Ambil jenis dari parameter URL
   
     kategoriPakaian.findAll({
       where: {
-        jenis: jenis // Filter berdasarkan jenis yang diterima dari URL
+        type: type // Filter berdasarkan jenis yang diterima dari URL
       }
     })
       .then(function(data) {
         if (data.length === 0) {
           res.status(404).json({
-            message: `Tidak ada pakaian dengan jenis ${jenis} ditemukan.`
+            message: `Tidak ada pakaian dengan jenis ${type} ditemukan.`
           });
         } else {
           res.status(200).json({
@@ -41,6 +41,6 @@ function getPakaianByJenis(req, res) {
   }
 
 module.exports = {
-    getPakaian,
-    getPakaianByJenis,
+    getClothes,
+    getClothesByType,
 }
