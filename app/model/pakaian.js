@@ -6,10 +6,10 @@ const pakaian = connection.define("pakaian", {
     name: {type: sequelize.DataTypes.STRING},
     type: {type: sequelize.DataTypes.STRING},
     price: {type: sequelize.DataTypes.DECIMAL},
-    img: {type: sequelize.DataTypes.TEXT},
+    img: {type: sequelize.DataTypes.STRING},
     rating: {type: sequelize.DataTypes.INTEGER},
-    colors: {type: sequelize.DataTypes.TEXT},
-    sizes: {type: sequelize.DataTypes.TEXT},
+    colors: {type: sequelize.DataTypes.STRING},
+    sizes: {type: sequelize.DataTypes.STRING},
 }, {
     freezeTableName: true,
     timestamps: false

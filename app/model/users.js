@@ -3,9 +3,9 @@ const sequelize = require('./index');
 
 const User = sequelize.define("users", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-  namaLengkap: { type: DataTypes.TEXT },
-  email: { type: DataTypes.TEXT },
-  password: { type: DataTypes.TEXT },
+  namaLengkap: { type: DataTypes.STRING },
+  email: { type: DataTypes.STRING },
+  password: { type: DataTypes.STRING },
 }, {
   tableName: 'users', // Nama tabel dalam database
   timestamps: false
