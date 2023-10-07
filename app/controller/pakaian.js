@@ -58,7 +58,7 @@ kategoriPakaian.findOne({
     }
 
     res.status(200).json({
-      data: pakaian,
+      data: mapTopakaianRes(pakaian),
     });
   })
   .catch(function (error) {
@@ -68,6 +68,19 @@ kategoriPakaian.findOne({
     });
   });
 };
+
+function mapTopakaianRes(pakaian){
+  return {
+    id: pakaian.id,
+    name: pakaian.name,
+    type: pakaian.type,
+    price: pakaian.price,
+    img: pakaian.img,
+    rating: rating.price,
+    colors: JSON.parse(pakaian.colors),
+    sizes: JSON.parse(pakaian.sizes),
+  }
+}
   
 module.exports = {
     getClothes,
