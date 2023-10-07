@@ -70,13 +70,15 @@ kategoriPakaian.findOne({
 };
 
 function mapTopakaianRes(pakaian){
+  console.log(pakaian.colors);
+  console.log(pakaian.sizes);
   return {
     id: pakaian.id,
     name: pakaian.name,
     type: pakaian.type,
     price: pakaian.price,
     img: pakaian.img,
-    rating: rating.price,
+    rating: pakaian.rating,
     colors: JSON.parse(pakaian.colors),
     sizes: JSON.parse(pakaian.sizes),
   }

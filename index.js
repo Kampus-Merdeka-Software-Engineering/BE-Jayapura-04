@@ -5,9 +5,9 @@ const connection = require('./app/model/index');
 
 // init express server and router
 const app = express();
+app.use(cors());
 const mainRouter = require('./app/routes');
 
-app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
