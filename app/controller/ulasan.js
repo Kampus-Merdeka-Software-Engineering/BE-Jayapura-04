@@ -1,22 +1,12 @@
 const Ulasan = require('../model/ulasan');
 
-// Controller untuk menyimpan ulasan
-function postUlasan(req, res) {
-  const { username, rating, ulasan } = req.body;
-
-  const ulasanData = {
-    username: username,
-    rating: rating,
-    ulasan: ulasan,
-  };
-
-  Ulasan.create(ulasanData)
-    .then(() => {
-      res.status(201).json({ message: 'Ulasan berhasil disimpan' });
-    })
-    .catch((error) => {
-      res.status(500).json({ error: 'Gagal menyimpan ulasan' });
-    });
+async function postUlasan(req, res){
+  try {
+      const ulasan = await Ulasan.create(req.body);
+      res.json({ success: true, ulasan });
+  } catch (err) {
+      res.status(500).json({ success: false, error: err.message });
+  }
 }
 
 function getUlasan(req, res) {

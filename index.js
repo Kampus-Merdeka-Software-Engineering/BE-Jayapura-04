@@ -7,7 +7,7 @@ const connection = require('./app/model/index');
 const app = express();
 const mainRouter = require('./app/routes');
 
-app.use(cors());
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

@@ -40,7 +40,37 @@ function getClothesByType(req, res) {
       });
   }
 
+
+function getClothesByID(req, res) {
+  const { type, id } = req.params;
+
+kategoriPakaian.findOne({
+  where: {
+    type: type,
+    id: id,
+  },
+})
+  .then(function (pakaian) {
+    if (!pakaian) {
+      return res.status(404).json({
+        message: `Pakaian dengan jenis ${type} dan ID ${id} tidak ditemukan.`,
+      });
+    }
+
+    res.status(200).json({
+      data: pakaian,
+    });
+  })
+  .catch(function (error) {
+    console.error(error);
+    res.status(500).json({
+      error: 'Terjadi kesalahan saat mengambil detail pakaian.',
+    });
+  });
+};
+  
 module.exports = {
     getClothes,
     getClothesByType,
+    getClothesByID,
 }
