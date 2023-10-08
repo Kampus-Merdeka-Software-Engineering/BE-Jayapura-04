@@ -57,9 +57,9 @@ kategoriPakaian.findOne({
       });
     }
 
-    res.status(200).json({
-      data: mapTopakaianRes(pakaian),
-    });
+    res.status(200).json(
+      mapTopakaianRes(pakaian)
+  );
   })
   .catch(function (error) {
     console.error(error);
@@ -80,7 +80,7 @@ function mapTopakaianRes(pakaian){
     img: pakaian.img,
     rating: pakaian.rating,
     colors: JSON.parse(pakaian.colors),
-    sizes: JSON.parse(pakaian.sizes),
+    sizes: JSON.parse(pakaian.sizes)
   }
 }
   
