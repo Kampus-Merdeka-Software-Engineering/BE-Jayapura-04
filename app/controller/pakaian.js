@@ -70,8 +70,6 @@ kategoriPakaian.findOne({
 };
 
 function mapTopakaianRes(pakaian){
-  console.log(pakaian.colors);
-  console.log(pakaian.sizes);
   return {
     id: pakaian.id,
     name: pakaian.name,
