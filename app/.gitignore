@@ -1,0 +1,4 @@
+# Berkas environment berisi informasi sensitif
+.env
+
+node_modules

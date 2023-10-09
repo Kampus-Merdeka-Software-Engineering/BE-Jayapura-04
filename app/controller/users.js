@@ -15,17 +15,6 @@ const postSignup = async (req, res) => {
   res.status(201).json({ message: 'Pendaftaran berhasil' });
 };
 
-
-// Controller untuk mendapatkan data pendaftaran (Signup)
-// async function getSignup(req, res) {
-//   try {
-//     const users = await User.findAll();
-//     res.status(200).json(users);
-//   } catch (error) {
-//     res.status(500).json({ error: 'Terjadi kesalahan saat mengambil data pendaftaran' });
-//   }
-// }
-
 // Controller untuk masuk (Login)
 async function postLogin(req, res) {
   const { email, password } = req.body;
@@ -50,6 +39,5 @@ async function postLogin(req, res) {
 
 module.exports = {
   postSignup,
-  // getSignup,
   postLogin,
 };

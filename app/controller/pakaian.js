@@ -15,11 +15,11 @@ function getClothes(req, res) {
 }
 
 function getClothesByType(req, res) {
-    const { type } = req.params; // Ambil jenis dari parameter URL
+    const { type } = req.params; 
   
     kategoriPakaian.findAll({
       where: {
-        type: type // Filter berdasarkan jenis yang diterima dari URL
+        type: type 
       }
     })
       .then(function(data) {

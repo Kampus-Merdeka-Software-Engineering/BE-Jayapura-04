@@ -7,7 +7,7 @@ const User = sequelize.define("users", {
   email: { type: DataTypes.STRING },
   password: { type: DataTypes.STRING },
 }, {
-  tableName: 'users', // Nama tabel dalam database
+  tableName: 'users', 
   timestamps: false
 });
 

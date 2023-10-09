@@ -10,11 +10,9 @@ router.get('/pakaian/:type/:id', controller.getClothesByID);
 
 
 router.post('/signup', controllerUser.postSignup);
-// router.get('/signup', controllerUser.getSignup);
 
 router.post('/login', controllerUser.postLogin);
 
 router.post('/bantuan', controllerBantuan.postBantuan);
-router.get('/bantuan', controllerBantuan.getBantuan);
 
 module.exports = router;

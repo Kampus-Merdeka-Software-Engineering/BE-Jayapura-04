@@ -10,16 +10,6 @@ async function postBantuan(req, res){
     }
 }
 
-async function getBantuan(req, res) {
-    try {
-      const bantuan = await Bantuan.findAll();
-      res.status(200).json(bantuan);
-    } catch (error) {
-      res.status(500).json({ error: 'Terjadi kesalahan saat mengambil data pendaftaran' });
-    }
-  }
-
 module.exports = {
     postBantuan,
-    getBantuan 
 }
